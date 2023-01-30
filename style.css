@@ -44,7 +44,7 @@ body{
     font-size:25px;
 }
 .top-toolbar .btn .icon:hover{
-    color:color:hsl(0,100%,100%);
+    color:hsl(0,100%,100%);
 }
 .container{
     width:80%;

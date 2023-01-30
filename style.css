@@ -40,6 +40,11 @@ body{
     background-color:hsl(240, 1%, 58%);
 }
 .top-toolbar .btn .icon{
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
     color:hsl(240, 1%, 58%);
     font-size:25px;
 }
@@ -118,10 +123,10 @@ hr{
     display:flex;
     flex-direction:column;
     justify-content:center;
-    padding-left:12px;
+    padding-left:17px;
 }
 .container .file-panel .filename{
-    width:90px;
+    width:85%;
     height:35px;
     padding-left:12px;
     font-size:16px;

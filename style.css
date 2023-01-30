@@ -38,11 +38,13 @@ body{
 }
 .top-toolbar .btn:hover{
     background-color:hsl(240, 1%, 58%);
-    color:hsl(0,100%,100%);
 }
 .top-toolbar .btn .icon{
     color:hsl(240, 1%, 58%);
     font-size:25px;
+}
+.top-toolbar .btn .icon:hover{
+    color:color:hsl(0,100%,100%);
 }
 .container{
     width:80%;
@@ -116,10 +118,10 @@ hr{
     display:flex;
     flex-direction:column;
     justify-content:center;
-    padding-left:20px;
+    padding-left:12px;
 }
 .container .file-panel .filename{
-    width:100px;
+    width:90px;
     height:35px;
     padding-left:12px;
     font-size:16px;

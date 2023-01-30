@@ -26,14 +26,13 @@ body{
     margin-bottom:15px;
 }
 .top-toolbar .btn{
-    width:45px;
+    width:50px;
     height:40px;
-    font-size:20px;
     display:flex;
     justify-content:center;
     align-items:center;
     background-color:hsl(240, 12%, 10%);
-    margin:12px;
+    margin:15px;
     border-radius:4px;
     cursor:pointer;
 }
@@ -43,6 +42,7 @@ body{
 }
 .top-toolbar .btn .icon{
     color:hsl(240, 1%, 58%);
+    font-size:25px;
 }
 .container{
     width:80%;

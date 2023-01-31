@@ -1,16 +1,30 @@
+<?php
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./Media/favicon.svg">
     <link rel="stylesheet" href="style.css">
-<!--     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/brands.min.css" integrity="sha512-G/T7HQJXSeNV7mKMXeJKlYNJ0jrs8RsWzYG7rVACye+qrcUhEAYKYzaa+VFy6eFzM2+/JT1Q+eqBbZFSHmJQew==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/brands.min.css" integrity="sha512-G/T7HQJXSeNV7mKMXeJKlYNJ0jrs8RsWzYG7rVACye+qrcUhEAYKYzaa+VFy6eFzM2+/JT1Q+eqBbZFSHmJQew==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <title>TextEditor</title>
+    <title>TabNotes</title>
 </head>
 <body>
+    <div class="logo-bar">
+        <div class="logo-panel">
+            <ul style="list-style-type:none;">
+              <li style="float:left;margin:7px 15px;"><img src="./Media/favicon.svg"></li>
+              <li class="tabnotes">Tab<span>Notes</span></li>
+            </ul>
+            <hr class="hr">
+        </div>
+    </div>
+
     <div class="top-toolbar">
+        <div class="left-bar">
         <button class="btn" onclick="document.execCommand('undo')"><p class="icon"><i class='bx bx-undo' ></i></p></button>
         <button class="btn" onclick="document.execCommand('redo')"><p class="icon"><i class='bx bx-redo' ></i></p></button>
         <button class="btn" onclick="document.execCommand('bold')"><p class="icon"><i class='bx bx-bold icon'></i></p></button>
@@ -26,6 +40,16 @@
         <button class="btn" onclick="copy()"><p class="icon"><i class='bx bx-copy'></i></p></button>
         <button class="btn" onclick="addlink()"><p class="icon"><i class='bx bx-link' ></i></p></button>
         <button class="btn" onclick="document.execCommand('unlink')"><p class="icon"><i class='bx bx-unlink' ></i></p></button>
+        </div>
+        <div class="right-bar">
+        <input type="text" class="filename" id="filename" placeholder="Filename" spellcheck="false">
+                <select class="save" id="save" onchange="fileHandle(this.value); this.selectedIndex=0;">
+                    <option value="" selected="" hidden="" disabled="">Save as</option>
+                    <option value="new">New File</option>
+                    <option value="txt">Save as Text</option>
+                    <option value="pdf">Save as pdf</option>
+                </select>
+        </div>
     </div>
 
     <div class="container">
@@ -54,24 +78,15 @@
             <hr>
             <ul style="list-style-type:none;">
                 <li class="color" style="float:left;padding-right:15px;">Color : </li>
-                <li style="float:left;"><input type="color" value="#9824E5" id="style1" oninput="document.execCommand('foreColor', false, this.value);"></li>
+                <li style="float:left;"><input type="color" value="#D810F9" id="style1" oninput="document.execCommand('foreColor', false, this.value);"></li>
             </ul>
             <hr>
             <ul style="list-style-type:none;">
                 <li class="color" style="float:left;padding-right:15px;">Background Color : </li>
-                <li style="float:left;"><input type="color" value="#2488E5" id="style1" oninput="document.execCommand('hiliteColor', false, this.value);"></li>
+                <li style="float:left;"><input type="color" value="#2029F8" id="style1" oninput="document.execCommand('hiliteColor', false, this.value);"></li>
             </ul>
         </div>
 
-        <div class="file-panel">
-            <input type="text" class="filename" id="filename" placeholder="Filename" spellcheck="false">
-                <select class="save" id="save" onchange="fileHandle(this.value); this.selectedIndex=0;">
-                    <option value="" selected="" hidden="" disabled="">Save as</option>
-                    <option value="new">New File</option>
-                    <option value="txt">Save as Text</option>
-                    <option value="pdf">Save as pdf</option>
-                </select>
-        </div>
         <div class="text-area" id="text-area" contenteditable="true" spellcheck="false"></div>
     </div>
 

@@ -26,7 +26,7 @@ content.addEventListener('mouseenter', function () {
 const filename = document.getElementById('filename');
 
 function fileHandle(value) {
-	if(value === 'new') { // === means returns boolean value in javascript
+	if(value === 'new') { 
 		content.innerHTML = '';
 		filename.value = '';
 	} else if(value === 'txt') {
@@ -34,9 +34,17 @@ function fileHandle(value) {
 		const url = URL.createObjectURL(blob)
 		const link = document.createElement('a');
 		link.href = url;
-		link.download = `${filename.value}.txt`;
+		if(filename.value==''){
+			link.download = `Untitled.txt`;
+		}else{
+			link.download = `${filename.value}.txt`;
+		}
 		link.click();
 	} else if(value === 'pdf') {
-		html2pdf(content).save(filename.value);
+		if(filename.value==''){
+			html2pdf(content).save("Untitled");
+		}else{
+			html2pdf(content).save(filename.value);
+		}
 	}
 }
